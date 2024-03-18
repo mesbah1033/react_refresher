@@ -1,0 +1,94 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Babel Script -->
+    <script type="text/jsx">
+    //   const app = document.getElementById('app');
+    //   const header = document.createElement('h1');
+    //   const text = 'Develop. Preview. Ship.';
+    //   const headerContent = document.createTextNode(text);
+    //   header.appendChild(headerContent);
+    //   app.appendChild(header);
+
+
+        <!-- app is basically the DOM of this HTML -->
+        const app = document.getElementById('app');
+        
+        <!-- React component starts with Capital letter vs. JS function. Otherwise both a function and component are more or less the same thing. -->
+
+
+        <!-- props can use object destructuring to get whats inside the object e.g. (object) vs ({inside object}) -->
+        
+        <!-- 1. function Header({ title }){
+          console.log(title); // { title: "React" }
+          
+          {/* this is different from the above destructuring */}
+          {/* this is calling a variable in JSX*/}
+          return <h1>{title}</h1>
+        }
+
+        function Homepage(){
+          return (    
+            <div>
+            {/* Nesting the Header component */}
+            <Header title="React" />
+            </div>
+          )
+        } -->
+
+        <!-- 2. using ternary operators to have 'Default title' incase {title} is empty -->
+        function Header({ title }){
+            return(<h1>{title ? title : 'Default title'}</h1>)
+        }
+
+        function Homepage(){
+            return (    
+              <div>
+              <Header />
+              </div>
+            )
+          }
+        
+
+        <!-- 3. component being reused -->
+          function Header({ title }){
+            return(<h1>{title ? title : 'Default title'}</h1>)
+          }
+  
+          function Homepage(){
+            {/* component being reused in different parts of the application */}
+            return (    
+              <div>
+                <Header title="React" />
+                <Header title="A new title" />
+                <Header />
+              </div>
+            )
+          }
+
+
+          
+        <!-- 4. inside <ul> is inside JSX space. We start JS code here by using curly braces {}. Inside the JS code we create a function that iterates over a list using MAP. array.map((eachValue) => (returnedValue)). In this case the returned value is a JSX expression <li></li>. And inside the JSX expression we need to insert curly braces to use the variable {name}. Remember the "variable" is a javascript/JS thing and NOT a JSX thing. -->
+          function Homepage(){
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+            return (    
+              <div>
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                  {names.map((name)=>(
+                    <li>{name}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+
+        <!-- root is, in my understanding, a "wrapper" of React on the DOM/app -->
+        const root = ReactDOM.createRoot(app);
+        root.render(<Homepage />);
+    </script>
+  </body>
+</html>
