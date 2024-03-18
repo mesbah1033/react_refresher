@@ -13,9 +13,27 @@
     //   header.appendChild(headerContent);
     //   app.appendChild(header);
 
+
+        <!-- app is basically the DOM of this HTML -->
         const app = document.getElementById('app');
+        
+        <!-- React component starts with Capital letter vs. JS function. Otherwise both a function and component are more or less the same thing. -->
+        function Header(){
+          return (<h1>Develop. Preview. Ship.</h1>)
+        }
+
+        function Homepage(){
+          return (    
+            <div>
+            {/* Nesting the Header component */}
+            <Header />
+            </div>
+          )
+        }
+        
+        <!-- root is, in my understanding, a "wrapper" of React on the DOM/app -->
         const root = ReactDOM.createRoot(app);
-        root.render(<h1>Develop. Preview. Ship.</h1>);
+        root.render(<Homepage />);
     </script>
   </body>
 </html>
