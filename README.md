@@ -3,7 +3,9 @@
 
 - creating this repo to track my progress
 - going to be using this as a refresher for myself
-- just downloading the html files and working on them instead of using something like express.js
+- used parcel to "display" index.html file till index_7b.html
+- I used index_(number) to add comments to the specific progression made in the course.
+- From Chapter 8 onwards, the course starts using index.js/page.js instead of index.html
 
 
 ## Get back to these when possible
