@@ -24,29 +24,11 @@
 
         function Homepage(){
           const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-          
-          {/* Props are read-only information that's passed to components. */}
-          {/* State is information that can change over time, usually triggered by user interaction. */}
-          {/* Setting up state by using useState "hook".  */}
-          {/* "Hooks" are just special functions by React */}
-          {/* State is used to store information in your UI */}
-          {/* State ALWAYS needs to be set up before whatever changes the state */}
-          {/* useState function returns an ARRAY with 2 value. */}
-          {/* First is a variable (state value) you want to change VISUALLY */}
-          {/* Second is a function that is used to chagne the first value (state value) */}
-          {/* useState(0) - the 0 in here is the initial number of the count */}
-          {/* EXTRA - the state is initiated and stored within a component. Keep the setCount logic within the OG component */}
-          {/* EXTRA - Keep the setCount logic within the OG component */}
-          {/* EXTRA - You can pass the state information to children components as props */}
-          const [likes, setLikes] = React.useState(0);
 
           {/* "Handler" function for any Events always needs to go before the *final* return function. */}
           function handleClick() {
-            setLikes(likes + 1);
             console.log("increment like count")
           }
-
-
           return (    
             <div>
               <Header title="Develop. Preview. Ship." />
@@ -57,7 +39,7 @@
               </ul>
               
               {/* onClick is an event. That needs to be "handled" */}
-              <button onClick={handleClick}>Like {likes} </button>
+              <button onClick={handleClick}>Like</button>
             </div>
           )
         }
