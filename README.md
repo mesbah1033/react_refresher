@@ -14,7 +14,7 @@
 
 > Additional Resources:
 
-- [How to split application into client and server?] (https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
+- [How to split application into client and server?](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
 
 You don't need to know exactly how React updates the UI to start using it, but if you'd like to learn more, here are some additional resources:
 
